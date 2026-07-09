@@ -18,18 +18,6 @@ function safeB64(p: string): string | null {
   }
 }
 
-const pill = {
-  display: "flex",
-  alignItems: "center",
-  borderRadius: 999,
-  border: "1px solid rgba(255,255,255,0.14)",
-  background: "rgba(255,255,255,0.05)",
-  padding: "12px 22px",
-  fontSize: 24,
-  fontWeight: 600,
-  color: "rgba(255,255,255,0.82)",
-};
-
 export default function OG() {
   const LOGO = safeB64("public/img/logo-white.png");
   const MARK = safeB64("public/img/mark-white.png");
@@ -42,64 +30,66 @@ export default function OG() {
           position: "relative",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
-          padding: 72,
-          background: "linear-gradient(135deg, #08281b 0%, #0a3324 45%, #051a12 100%)",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 44,
+          background: "linear-gradient(135deg, #08281b 0%, #0c3a28 48%, #051a12 100%)",
           fontFamily: "sans-serif",
           overflow: "hidden",
         }}
       >
-        {/* cyan glow */}
+        {/* soft green glows for depth */}
         <div
           style={{
             position: "absolute",
-            top: -180,
-            right: -120,
-            width: 620,
-            height: 620,
+            top: -170,
+            left: -130,
+            width: 560,
+            height: 560,
             display: "flex",
-            background: "radial-gradient(circle, rgba(47,211,158,0.28), rgba(47,211,158,0) 70%)",
+            background: "radial-gradient(circle, rgba(47,211,158,0.30), rgba(47,211,158,0) 70%)",
           }}
         />
-        {/* real-mark watermark */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: -210,
+            right: -150,
+            width: 640,
+            height: 640,
+            display: "flex",
+            background: "radial-gradient(circle, rgba(47,211,158,0.16), rgba(47,211,158,0) 70%)",
+          }}
+        />
+        {/* faint mark watermark */}
         {MARK && (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={MARK} width={440} height={440} alt="" style={{ position: "absolute", right: -60, bottom: -100, opacity: 0.06 }} />
+          <img src={MARK} width={540} height={540} alt="" style={{ position: "absolute", right: -130, bottom: -170, opacity: 0.05 }} />
         )}
 
-        {/* top row — real logo */}
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          {LOGO ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={LOGO} width={236} height={54} alt="GoStaffer" />
-          ) : (
-            <div style={{ display: "flex", fontSize: 42, fontWeight: 800, letterSpacing: -1 }}>
-              <span style={{ color: "#fff" }}>go</span>
-              <span style={{ color: "#2fd39e" }}>staffer</span>
-            </div>
-          )}
-          <div style={{ ...pill, color: "#7defc4" }}>
-            <div style={{ display: "flex", width: 12, height: 12, borderRadius: 999, background: "#35d6a0", marginRight: 12 }} />
-            Live calling floor
+        {/* logo — the primary focus */}
+        {LOGO ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={LOGO} width={720} height={198} alt="GoStaffer" style={{ display: "flex" }} />
+        ) : (
+          <div style={{ display: "flex", fontSize: 128, fontWeight: 800, letterSpacing: -3 }}>
+            <span style={{ color: "#fff" }}>go</span>
+            <span style={{ color: "#2fd39e" }}>staffer</span>
           </div>
-        </div>
+        )}
 
-        {/* headline — wraps, never clips */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 26 }}>
-          <div style={{ display: "flex", flexWrap: "wrap", fontSize: 64, fontWeight: 800, lineHeight: 1.06, letterSpacing: -2, color: "#fff", maxWidth: 1040 }}>
-            <span>Win more customers on the phone&nbsp;</span>
-            <span style={{ color: "#2fd39e" }}>without the call center.</span>
-          </div>
-          <div style={{ display: "flex", fontSize: 30, color: "rgba(255,255,255,0.65)", maxWidth: 960 }}>
-            Trained, bilingual teams in Cairo, managed from West Palm Beach. Kickoff in 24 hours, live in days — billed by the minute.
-          </div>
-        </div>
-
-        {/* bottom pills */}
-        <div style={{ display: "flex", gap: 16 }}>
-          <div style={pill}>500K+ dials / month</div>
-          <div style={pill}>98% fluent English</div>
-          <div style={pill}>Zero platform fees</div>
+        {/* one short, on-brand line */}
+        <div
+          style={{
+            display: "flex",
+            fontSize: 38,
+            fontWeight: 500,
+            letterSpacing: -0.5,
+            color: "rgba(255,255,255,0.72)",
+          }}
+        >
+          Real people. On your phones.{" "}
+          <span style={{ color: "#2fd39e", marginLeft: 10 }}>Today.</span>
         </div>
       </div>
     ),
