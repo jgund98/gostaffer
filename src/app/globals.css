@@ -1,0 +1,450 @@
+@import "tailwindcss";
+
+/* ============================================================
+   GoStaffer — design system (bold, branded, verdant)
+   Clean light base + immersive deep-forest mesh blocks +
+   full-color green bands. Grotesk + editorial serif + mono.
+   Brand tokens keep their historical names (--blue-*, etc.)
+   but carry GREEN values so every utility class inherits the
+   new palette without churn.
+   ============================================================ */
+:root {
+  /* light surfaces */
+  --paper: #ffffff;
+  --bone: #f5f7fa;        /* alt light sections */
+  --cloud: #e9edf3;
+  --line: #e2e7ef;
+  --line-2: #cfd6e2;
+
+  /* ink / text */
+  --ink: #08101e;         /* headlines */
+  --graphite: #283549;
+  --slate: #45566e;       /* body */
+  --mute: #5c6a82;        /* muted */
+
+  /* verdant brand (names kept for compat; values are GoStaffer green) */
+  --blue-700: #0f6b46;    /* deep green — links/text on white (AA) */
+  --blue-600: #167a52;
+  --blue-500: #24a56d;    /* primary — matches the logo */
+  --blue-400: #46c187;
+  --cyan: #2fd39e;        /* mint highlight */
+  --indigo: #0ea5a5;      /* teal — cool leg of the gradient */
+  --blade-tint: #e6f7ef;
+
+  /* dark canvas (immersive blocks) — deep forest */
+  --navy: #051a12;
+  --navy-2: #08281b;
+  --navy-3: #0e3a28;
+
+  /* energy spark (warm complement, used sparingly) */
+  --spark: #ffb43d;
+  --emerald: #12b981;
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+
+  /* back-compat aliases (old v2 names → new verdant tokens) */
+  --grad-aurora: linear-gradient(100deg, #167a52 0%, #0ea5a5 52%, #2fd39e 100%);
+
+  --section-y: clamp(4.5rem, 8vw, 8.5rem);
+
+  --shadow-sm: 0 1px 2px rgba(8, 16, 30, 0.06), 0 1px 1px rgba(8, 16, 30, 0.04);
+  --shadow-md: 0 8px 22px -8px rgba(8, 16, 30, 0.14), 0 2px 6px -2px rgba(8, 16, 30, 0.06);
+  --shadow-lg: 0 32px 60px -22px rgba(8, 16, 30, 0.28), 0 12px 22px -12px rgba(8, 16, 30, 0.12);
+  --shadow-electric: 0 14px 40px -12px rgba(36, 165, 109, 0.6);
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-paper: var(--paper);
+  --color-bone: var(--bone);
+  --color-cloud: var(--cloud);
+  --color-line: var(--line);
+  --color-line2: var(--line-2);
+
+  --color-ink: var(--ink);
+  --color-graphite: var(--graphite);
+  --color-slate: var(--slate);
+  --color-mute: var(--mute);
+
+  --color-blue-700: var(--blue-700);
+  --color-blue-600: var(--blue-600);
+  --color-blue-500: var(--blue-500);
+  --color-blue-400: var(--blue-400);
+  --color-cyan: var(--cyan);
+  --color-indigo: var(--indigo);
+  --color-blade-tint: var(--blade-tint);
+
+  --color-navy: var(--navy);
+  --color-navy2: var(--navy-2);
+  --color-navy3: var(--navy-3);
+  --color-spark: var(--spark);
+  --color-emerald: var(--emerald);
+
+  /* back-compat color aliases */
+  --color-blade-700: var(--blue-700);
+  --color-blade-600: var(--blue-600);
+  --color-blade-500: var(--blue-500);
+  --color-blade-400: var(--blue-400);
+  --color-blade-300: #b9ecd0;
+  --color-blade-tint: var(--blade-tint);
+  --color-amber: var(--spark);
+  --color-violet: var(--indigo);
+  --color-mist: var(--bone);
+  --color-frost: #f9fbfd;
+
+  --font-display: var(--font-display), "Space Grotesk", system-ui, sans-serif;
+  --font-serif: var(--font-serif), "Fraunces", Georgia, serif;
+  --font-sans: var(--font-sans), "Inter", system-ui, sans-serif;
+  --font-mono: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+}
+
+* {
+  border-color: var(--line);
+  min-width: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 6rem;
+  overflow-x: clip;
+}
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+  position: relative;
+  width: 100%;
+}
+
+::selection { background: color-mix(in srgb, var(--blue-500) 28%, transparent); color: var(--ink); }
+:focus-visible { outline: 2px solid var(--blue-500); outline-offset: 2px; border-radius: 4px; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+  line-height: 1.0;
+  text-wrap: balance;
+}
+
+/* editorial serif accent — italic emphasis words inside headlines */
+.serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.serif-i { font-family: var(--font-serif); font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+
+/* mono micro-labels (eyebrows / stats / tags) */
+.mono { font-family: var(--font-mono); }
+
+/* ============================================================
+   Type helpers
+   ============================================================ */
+.text-gradient {
+  background: linear-gradient(100deg, #0f6b46 0%, #1c9a63 52%, #0ea5a5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding-block: 0.04em;
+}
+.text-gradient-light {
+  background: linear-gradient(100deg, #8fe9c4, #5fe0b8 55%, #b8f0d8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding-block: 0.04em;
+}
+/* On dark heroes, page titles pass the light-bg `.text-gradient`; remap it to
+   the dark-bg gradient so highlights stay legible without editing every page. */
+.hero-dark .text-gradient {
+  background-image: linear-gradient(100deg, #8fe9c4, #5fe0b8 55%, #b8f0d8);
+}
+
+/* ghost numeral — big outlined number behind content */
+.ghost-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1.5px color-mix(in srgb, var(--blue-500) 30%, transparent);
+  user-select: none;
+}
+.ghost-num-light {
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.16);
+}
+
+/* ============================================================
+   Surfaces & depth
+   ============================================================ */
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-md);
+}
+.glass {
+  background: color-mix(in srgb, var(--paper) 74%, transparent);
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  border: 1px solid color-mix(in srgb, var(--paper) 55%, var(--line));
+}
+.glass-dark {
+  background: rgba(10, 23, 48, 0.55);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ============================================================
+   Immersive electric mesh (dark blocks / hero)
+   ============================================================ */
+.mesh {
+  background:
+    radial-gradient(60% 80% at 12% 10%, rgba(36, 165, 109, 0.5) 0%, transparent 58%),
+    radial-gradient(52% 72% at 88% 6%, rgba(47, 211, 158, 0.32) 0%, transparent 55%),
+    radial-gradient(70% 90% at 72% 104%, rgba(14, 165, 165, 0.42) 0%, transparent 60%),
+    linear-gradient(165deg, #08281b 0%, #051a12 92%);
+}
+.mesh-animated {
+  background-size: 160% 160%, 150% 150%, 170% 170%, 100% 100%;
+  animation: mesh-drift 24s ease-in-out infinite alternate;
+}
+@keyframes mesh-drift {
+  0% { background-position: 0% 0%, 100% 0%, 50% 100%, 0 0; }
+  50% { background-position: 28% 38%, 62% 28%, 32% 58%, 0 0; }
+  100% { background-position: 58% 12%, 88% 58%, 68% 88%, 0 0; }
+}
+
+/* full electric-blue color block */
+.block-electric {
+  background:
+    radial-gradient(80% 120% at 100% 0%, rgba(47, 211, 158, 0.35), transparent 55%),
+    linear-gradient(150deg, #167a52 0%, #0f6b46 100%);
+  color: #fff;
+}
+
+/* floating glow orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(64px);
+  opacity: 0.55;
+  pointer-events: none;
+  will-change: transform;
+}
+.orb-blue { background: radial-gradient(circle, var(--blue-500), transparent 70%); }
+.orb-cyan { background: radial-gradient(circle, var(--cyan), transparent 70%); }
+.orb-indigo { background: radial-gradient(circle, var(--indigo), transparent 70%); }
+@keyframes float-slow {
+  0% { transform: translate3d(0,0,0) scale(1); }
+  50% { transform: translate3d(18px,-26px,0) scale(1.08); }
+  100% { transform: translate3d(0,0,0) scale(1); }
+}
+.float-a { animation: float-slow 15s ease-in-out infinite; }
+.float-b { animation: float-slow 19s ease-in-out infinite reverse; }
+
+/* grid + dot textures */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 35%, #000 30%, transparent 78%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 35%, #000 30%, transparent 78%);
+}
+.grid-ink {
+  background-image:
+    linear-gradient(rgba(8,16,30,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(8,16,30,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.dot-grid {
+  background-image: radial-gradient(color-mix(in srgb, var(--line-2) 75%, transparent) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Prevent iOS Safari auto-zoom on field focus — it zooms for any input under
+   16px and won't always zoom back out (e.g. when a modal closes mid-focus). */
+@media (max-width: 640px) {
+  input:not([type="checkbox"]):not([type="radio"]),
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+/* film grain — crafted studio texture */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+
+/* ============================================================
+   Buttons — characterful, with glint sweep
+   ============================================================ */
+.btn-electric {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(100deg, #167a52, #24a56d 55%, #2fd39e);
+  color: #fff;
+  box-shadow: var(--shadow-electric), inset 0 1px 0 rgba(255,255,255,0.3);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.btn-electric:hover { transform: translateY(-2px); box-shadow: 0 20px 50px -12px rgba(47,211,158,0.6), inset 0 1px 0 rgba(255,255,255,0.35); }
+.btn-electric:active { transform: translateY(0); }
+.btn-electric::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 38%, rgba(255,255,255,0.5) 50%, transparent 62%);
+  background-size: 220% 100%;
+  background-position: 165% 0;
+  opacity: 0;
+}
+.btn-electric:hover::before { animation: glint 0.85s var(--ease); }
+.btn-electric > * { position: relative; z-index: 2; }
+@keyframes glint {
+  0% { background-position: 165% 0; opacity: 0; }
+  22% { opacity: 1; }
+  100% { background-position: -55% 0; opacity: 0; }
+}
+
+/* sticker — rotated bold tag */
+.sticker {
+  display: inline-block;
+  background: var(--spark);
+  color: #3a2200;
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  transform: rotate(-3deg);
+  box-shadow: 0 6px 18px -6px rgba(255, 180, 61, 0.6);
+}
+/* highlighter swipe */
+.highlighter {
+  background: linear-gradient(180deg, transparent 58%, color-mix(in srgb, var(--cyan) 45%, transparent) 58%);
+  padding: 0 0.05em;
+}
+
+/* animated underline link */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1.5px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.32s var(--ease);
+}
+.link-underline:hover { background-size: 100% 1.5px; }
+
+/* gradient hairline border via mask */
+.grad-ring { position: relative; }
+.grad-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.25px;
+  background: linear-gradient(130deg, var(--cyan), var(--indigo) 55%, transparent 80%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* hairline divider */
+.hairline {
+  height: 1px;
+  background-image: linear-gradient(90deg, transparent, var(--line-2) 25%, color-mix(in srgb, var(--blue-500) 60%, var(--line-2)) 50%, var(--line-2) 75%, transparent);
+}
+
+.tnum { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* range slider */
+.cb-range {
+  -webkit-appearance: none; appearance: none; height: 6px; border-radius: 999px;
+  background: linear-gradient(90deg, var(--blue-500) 0%, var(--cyan) var(--pct,50%), var(--cloud) var(--pct,50%), var(--cloud) 100%);
+  cursor: pointer;
+}
+.cb-range::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; height: 22px; width: 22px; border-radius: 999px;
+  background: var(--paper); border: 3px solid var(--blue-500); box-shadow: var(--shadow-md);
+  transition: transform 0.15s ease;
+}
+.cb-range::-webkit-slider-thumb:hover { transform: scale(1.1); }
+.cb-range::-moz-range-thumb { height: 22px; width: 22px; border-radius: 999px; background: var(--paper); border: 3px solid var(--blue-500); }
+
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes packet-x { 0% { left: -6px; opacity: 0; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { left: 100%; opacity: 0; } }
+@keyframes packet-y { 0% { top: -6px; opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
+.cb-packet-x { animation: packet-x 2.2s cubic-bezier(0.4,0,0.2,1) infinite; }
+.cb-packet-y { animation: packet-y 1.8s cubic-bezier(0.4,0,0.2,1) infinite; }
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+
+/* ---- signal rings (broadcast pulse) ---- */
+.signal-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: 100%;
+  margin-left: -50%;
+  margin-top: -50%;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--cyan) 55%, transparent);
+  animation: signal-ring 4s ease-out infinite;
+}
+@keyframes signal-ring {
+  0% { transform: scale(0.12); opacity: 0; }
+  18% { opacity: 0.5; }
+  100% { transform: scale(1); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .signal-ring { animation: none; opacity: 0; } }
+
+/* off-screen pause — toggled by AnimationGate to stop wasted GPU/CPU work */
+.anim-paused,
+.anim-paused *,
+.anim-paused *::before,
+.anim-paused *::after {
+  animation-play-state: paused !important;
+}
+
+@media (max-width: 768px) {
+  /* mobile is animation-light — kill the expensive continuous effects */
+  .mesh-animated { animation: none; }
+  .orb { opacity: 0.32; filter: blur(38px); }
+  .float-a,
+  .float-b,
+  .signal-ring,
+  .mesh-animated { animation: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

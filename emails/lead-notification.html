@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="color-scheme" content="light" />
+  <meta name="supported-color-schemes" content="light" />
+  <title>New lead — CallBlade</title>
+  <!--[if mso]>
+  <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
+  <![endif]-->
+  <style>
+    body,table,td,a{ -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
+    table,td{ mso-table-lspace:0pt; mso-table-rspace:0pt; }
+    body{ margin:0; padding:0; width:100% !important; background:#f4f6f8; }
+    a{ color:#0d7bc2; }
+    @media only screen and (max-width:620px){
+      .container{ width:100% !important; }
+      .px{ padding-left:22px !important; padding-right:22px !important; }
+      .lbl{ width:auto !important; display:block !important; padding-bottom:2px !important; }
+      .val{ display:block !important; }
+    }
+  </style>
+</head>
+<body style="margin:0; padding:0; background-color:#f4f6f8;">
+  <div style="display:none; max-height:0; overflow:hidden; mso-hide:all; font-size:1px; line-height:1px; color:#f4f6f8;">
+    New lead: {{full_name}} at {{company}} &mdash; {{email}}
+  </div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f6f8;">
+    <tr>
+      <td align="center" style="padding:32px 16px;">
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" class="container" style="width:600px; max-width:600px;">
+
+          <!-- accent top bar -->
+          <tr><td style="height:5px; line-height:5px; font-size:0; border-radius:14px 14px 0 0; background-color:#0d7bc2; background-image:linear-gradient(90deg,#0d7bc2,#19cdec 55%,#5b5ef2);">&nbsp;</td></tr>
+
+          <!-- title -->
+          <tr>
+            <td bgcolor="#ffffff" style="background-color:#ffffff; padding:30px 36px 6px;" class="px">
+              <p style="margin:0 0 8px; font-family:'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#0d7bc2;">New website lead</p>
+              <h1 style="margin:0; font-family:Georgia,'Times New Roman',serif; font-size:25px; line-height:1.25; font-weight:700; color:#0e1620;">
+                {{full_name}} <span style="color:#64748b; font-weight:400;">&mdash; {{company}}</span>
+              </h1>
+            </td>
+          </tr>
+
+          <!-- fields (all rows always render; blank shows a muted dash) -->
+          <tr>
+            <td bgcolor="#ffffff" style="background-color:#ffffff; padding:20px 36px 8px;" class="px">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e6eaf0; border-radius:12px; overflow:hidden;">
+
+                <tr>
+                  <td width="180" class="lbl" style="padding:14px 18px; background-color:#f7f9fb; font-family:'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; color:#64748b; border-bottom:1px solid #e6eaf0;">Full name</td>
+                  <td class="val" style="padding:14px 18px; font-family:'Segoe UI',Helvetica,Arial,sans-serif; font-size:15px; color:#0e1620; border-bottom:1px solid #e6eaf0;">{{#if full_name}}{{full_name}}{{else}}<span style="color:#94a3b8;">&mdash;</span>{{/if}}</td>
+                </tr>
+
+                <tr>
+                  <td width="180" class="lbl" style="padding:14px 18px; background-color:#f7f9fb; font-family:'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; color:#64748b; border-bottom:1px solid #e6eaf0;">Company</td>
+                  <td class="val" style="padding:14px 18px; font-family:'Segoe UI',Helvetica,Arial,sans-serif; font-size:15px; color:#0e1620; border-bottom:1px solid #e6eaf0;">{{#if company}}{{company}}{{else}}<span style="color:#94a3b8;">&mdash;</span>{{/if}}</td>
+                </tr>
+
+                <tr>
+                  <td width="180" class="lbl" style="padding:14px 18px; background-color:#f7f9fb; font-family:'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; color:#64748b; border-bottom:1px solid #e6eaf0;">Work email</td>
+                  <td class="val" style="padding:14px 18px; font-family:'Segoe UI',Helvetica,Arial,sans-serif; font-size:15px; color:#0e1620; border-bottom:1px solid #e6eaf0;">{{#if email}}<a href="mailto:{{email}}" style="color:#0d7bc2; text-decoration:none; font-weight:600;">{{email}}</a>{{else}}<span style="color:#94a3b8;">&mdash;</span>{{/if}}</td>
+                </tr>
+
+                <tr>
+                  <td width="180" class="lbl" style="padding:14px 18px; background-color:#f7f9fb; font-family:'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; color:#64748b; border-bottom:1px solid #e6eaf0;">Phone</td>
+                  <td class="val" style="padding:14px 18px; font-family:'Segoe UI',Helvetica,Arial,sans-serif; font-size:15px; color:#0e1620; border-bottom:1px solid #e6eaf0;">{{#if phone}}<a href="tel:{{phone}}" style="color:#0d7bc2; text-decoration:none; font-weight:600;">{{phone}}</a>{{else}}<span style="color:#94a3b8;">&mdash;</span>{{/if}}</td>
+                </tr>
+
+                <tr>
+                  <td width="180" class="lbl" style="padding:14px 18px; background-color:#f7f9fb; font-family:'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; color:#64748b;">Monthly call volume</td>
+                  <td class="val" style="padding:14px 18px; font-family:'Segoe UI',Helvetica,Arial,sans-serif; font-size:15px; color:#0e1620;">{{#if call_volume}}<span style="display:inline-block; padding:4px 12px; background-color:#e7f4fb; color:#0d7bc2; border-radius:999px; font-size:13px; font-weight:700;">{{call_volume}}</span>{{else}}<span style="color:#94a3b8;">&mdash;</span>{{/if}}</td>
+                </tr>
+
+              </table>
+            </td>
+          </tr>
+
+          <!-- message -->
+          <tr>
+            <td bgcolor="#ffffff" style="background-color:#ffffff; padding:16px 36px 6px;" class="px">
+              <p style="margin:0 0 8px; font-family:'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; color:#64748b;">What they want to accomplish</p>
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="padding:16px 18px; background-color:#f7f9fb; border-left:3px solid #0d7bc2; border-radius:0 10px 10px 0; font-family:Georgia,'Times New Roman',serif; font-size:16px; line-height:1.55; color:#1e2a38;">{{#if message}}{{message}}{{else}}<span style="color:#94a3b8;">No message provided.</span>{{/if}}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- reply CTA -->
+          <tr>
+            <td bgcolor="#ffffff" style="background-color:#ffffff; padding:24px 36px 30px;" class="px">
+              <!--[if mso]>
+              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="mailto:{{email}}" style="height:48px;v-text-anchor:middle;width:210px;" arcsize="20%" strokecolor="#0d7bc2" fillcolor="#0d7bc2">
+                <w:anchorlock/><center style="color:#ffffff;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:15px;font-weight:700;">Reply to {{full_name}}</center>
+              </v:roundrect>
+              <![endif]-->
+              <!--[if !mso]><!-->
+              <a href="mailto:{{email}}" style="display:inline-block; padding:14px 28px; background-color:#0d7bc2; background-image:linear-gradient(100deg,#0d7bc2,#19cdec 120%); color:#ffffff; font-family:'Segoe UI',Helvetica,Arial,sans-serif; font-size:15px; font-weight:700; text-decoration:none; border-radius:10px;">Reply to {{full_name}} &rarr;</a>
+              <!--<![endif]-->
+            </td>
+          </tr>
+
+          <!-- footer -->
+          <tr>
+            <td style="background-color:#eef1f5; border-radius:0 0 14px 14px; padding:18px 36px;" class="px">
+              <p style="margin:0; font-family:'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; line-height:1.6; color:#64748b;">
+                Submitted via <a href="https://callblade.com/contact" style="color:#0d7bc2; text-decoration:none;">callblade.com/contact</a>{{#if submitted_at}} &middot; {{submitted_at}}{{/if}}
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
