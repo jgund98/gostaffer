@@ -123,7 +123,7 @@ export function Hero() {
           </motion.p>
         </div>
 
-        {/* right — dashboard (floats with scroll) */}
+        {/* right — a real agent emerging from the mesh, her live dashboard in front */}
         <Parallax speed={46} className="relative w-full">
           <motion.div
             initial={{ opacity: 0, y: 30, scale: 0.97 }}
@@ -131,7 +131,7 @@ export function Hero() {
             transition={{ delay: 0.3, duration: 0.8, ease }}
             className="relative w-full"
           >
-            <div className="absolute -inset-8 -z-10 rounded-[2.5rem] bg-cyan/15 blur-3xl" />
+            <div className="absolute -inset-8 -z-10 rounded-[2.5rem] bg-blade-500/15 blur-3xl" />
             <CommandCenter />
           </motion.div>
         </Parallax>

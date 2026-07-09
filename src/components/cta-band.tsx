@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/reveal";
 import { SignalRings } from "@/components/fx";
-import { CALENDAR_URL } from "@/lib/site";
 
 export function CtaBand({
   title = "Ready to grow without the hiring headaches?",
@@ -52,14 +51,12 @@ export function CtaBand({
               <Button href={primaryHref} size="lg">
                 {primaryLabel} <ArrowRight className="h-4 w-4" />
               </Button>
-              <a
-                href={CALENDAR_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
                 className="inline-flex h-[3.25rem] items-center justify-center gap-2 rounded-[10px] border border-white/20 px-7 text-base font-semibold text-white transition-colors hover:border-white/50"
               >
                 Book a 15-min call
-              </a>
+              </button>
             </div>
           </Reveal>
         </div>

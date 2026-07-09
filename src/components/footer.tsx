@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { NAV, CALENDAR_URL, CONTACT_EMAIL, HQ_LINE } from "@/lib/site";
+import { NAV, CONTACT_EMAIL, HQ_LINE } from "@/lib/site";
 import { Logo } from "@/components/logo";
 import { Container } from "@/components/ui/container";
 
@@ -22,14 +22,12 @@ export function Footer() {
               agents on your phones in days — billed by the minute, zero setup fees.
             </p>
             <div className="flex flex-col gap-1.5 text-sm">
-              <a
-                href={CALENDAR_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
                 className="inline-flex w-fit items-center gap-1 font-medium text-blade-700 link-underline"
               >
                 Book a strategy call <ArrowUpRight className="h-3.5 w-3.5" />
-              </a>
+              </button>
               <a href={`mailto:${CONTACT_EMAIL}`} className="w-fit text-slate link-underline">
                 {CONTACT_EMAIL}
               </a>

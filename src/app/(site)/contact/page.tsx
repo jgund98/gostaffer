@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/container";
 import { LeadForm } from "@/components/lead-form";
 import { Reveal } from "@/components/reveal";
 import { PortalOrb } from "@/components/portal-orb";
-import { CALENDAR_URL, CONTACT_EMAIL, HQ_CITY } from "@/lib/site";
+import { CONTACT_EMAIL, HQ_CITY } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Get Started — Your Calling Team in 24 Hours",
@@ -83,14 +83,12 @@ export default function Contact() {
                         <p className="text-sm text-white/60">Book a 15-minute strategy call.</p>
                       </div>
                     </div>
-                    <a
-                      href={CALENDAR_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      type="button"
                       className="mt-4 inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-white text-sm font-semibold text-ink transition-transform hover:-translate-y-0.5"
                     >
                       Open the calendar <ArrowRight className="h-4 w-4" />
-                    </a>
+                    </button>
                   </div>
 
                   {/* proof */}

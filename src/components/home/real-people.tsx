@@ -63,11 +63,12 @@ export function RealPeople() {
             <div className="grad-ring relative overflow-hidden rounded-[1.75rem] shadow-[var(--shadow-lg)]">
               <div className="relative aspect-[4/5]">
                 <Image
-                  src="/img/people/rep-warm.webp"
+                  src="/img/people/rep-agent.webp"
                   alt="A GoStaffer agent on a live call"
                   fill
                   sizes="(max-width: 1024px) 90vw, 480px"
-                  className="object-cover object-[60%_center]"
+                  className="object-cover object-[center_20%]"
+                  priority
                 />
                 {/* subtle brand tint + bottom scrim to seat the chips */}
                 <div

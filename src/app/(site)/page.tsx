@@ -6,6 +6,7 @@ import { Process } from "@/components/home/process";
 import { Hybrid } from "@/components/home/hybrid";
 import { RealPeople } from "@/components/home/real-people";
 import { HumanProof } from "@/components/home/human-proof";
+import { FloorBand } from "@/components/home/floor-band";
 import { Marquee } from "@/components/marquee";
 import { ServicesOverview } from "@/components/home/services-overview";
 import { IndustriesStrip } from "@/components/home/industries-strip";
@@ -26,9 +27,13 @@ export default function Home() {
     <>
       <Hero />
       <Marquee />
-      <ServicesOverview />
-      <Hybrid />
+      {/* Human touch up front — two real-people beats early (RealPeople, then the
+          full-bleed HumanProof band) so the site never reads as a faceless AI
+          product. HumanProof sits between two light sections as a dark punctuation. */}
       <RealPeople />
+      <ServicesOverview />
+      <HumanProof />
+      <Hybrid />
       <Process />
 
       {/* Cost-truth — dark electric band, calculator card lifts off it */}
@@ -58,8 +63,9 @@ export default function Home() {
 
       <IndustriesStrip />
       <Egypt />
+      {/* The actual room at work — bridges "world-class team" → their results */}
+      <FloorBand />
       <Results />
-      <HumanProof />
       <CtaBand />
     </>
   );

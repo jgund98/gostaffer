@@ -4,7 +4,9 @@
    marked TODO(owner).
    ============================================================ */
 
-export const CALENDAR_URL = "https://calendar.app.google/pqoDN1aFb22BFLAE7";
+// TODO(owner): set GoStaffer's own booking link. Left inert ("#") for now so the
+// "Book a call" CTAs do nothing rather than point anywhere off-brand.
+export const CALENDAR_URL = "#";
 export const PORTAL_URL = "https://portal.gostaffer.com";
 export const CONTACT_EMAIL = "hello@gostaffer.com"; // TODO(owner): confirm
 
