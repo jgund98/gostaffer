@@ -138,7 +138,7 @@ export default function HowItWorks() {
 
       <CtaBand
         title="Start the 24-hour clock"
-        lead="Book a kickoff call. Within 24 hours we'll have your campaign scoped and the build underway — and you live in days."
+        lead="Book a kickoff call. Within 24 hours we'll have your campaign scoped and the build underway — and you're live in days."
       />
     </>
   );
