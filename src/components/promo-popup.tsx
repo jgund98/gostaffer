@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { X, Check, Sparkles, ArrowRight } from "lucide-react";
+import { X, Check, Sparkles, ArrowRight, TicketPercent } from "lucide-react";
 
 const PERKS = ["A dedicated, coached team", "Live in days — not months", "No setup fees, cancel anytime"];
 
@@ -105,13 +105,31 @@ export function PromoPopup() {
                 ))}
               </ul>
 
-              <div className="mt-8 flex flex-col gap-3">
+              {/* coupon ticket — a tangible code to claim */}
+              <div className="mt-6 flex items-center gap-3 rounded-xl border border-dashed border-blade-500/60 bg-blade-tint px-4 py-3">
+                <TicketPercent className="h-7 w-7 shrink-0 text-blade-600" />
+                <div className="flex flex-1 flex-col">
+                  <span className="mono text-[0.56rem] font-semibold uppercase tracking-[0.18em] text-blade-700/70">
+                    Your code — 2 weeks free
+                  </span>
+                  <span className="mono text-xl font-bold leading-tight tracking-[0.22em] text-ink">
+                    GS-2FREE
+                  </span>
+                </div>
+                <span className="mono hidden text-[0.6rem] font-semibold uppercase tracking-wide text-blade-700 sm:block">
+                  Apply at
+                  <br />
+                  kickoff →
+                </span>
+              </div>
+
+              <div className="mt-5 flex flex-col gap-3">
                 <Link
                   href="/contact"
                   onClick={() => setOpen(false)}
                   className="inline-flex h-[3.25rem] items-center justify-center gap-2 rounded-[10px] bg-blade-600 px-6 text-base font-semibold text-white transition-transform hover:-translate-y-0.5"
                 >
-                  Claim my free trial <ArrowRight className="h-4 w-4" />
+                  Claim 2 weeks free <ArrowRight className="h-4 w-4" />
                 </Link>
                 <button
                   type="button"
@@ -123,7 +141,7 @@ export function PromoPopup() {
               </div>
 
               <p className="mt-4 text-xs leading-relaxed text-mute">
-                New clients only · Limited spots this month.
+                New clients only · No card required.
               </p>
             </div>
           </motion.div>
