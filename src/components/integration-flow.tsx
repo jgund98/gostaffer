@@ -229,7 +229,7 @@ function LiveScreen({ operator, animate }: { operator: "gostaffer" | "client"; a
                 </span>
                 <span className="leading-tight">
                   <span className="block text-sm font-semibold text-ink">{isCB ? "Mariam H." : "Your agent"}</span>
-                  <span className="block text-xs text-slate">{isCB ? "GoStaffer · Cairo" : "Your in-house team"}</span>
+                  <span className="block text-xs text-slate">{isCB ? "GoStaffer · Alexandria" : "Your in-house team"}</span>
                 </span>
               </motion.div>
             </AnimatePresence>

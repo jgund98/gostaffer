@@ -5,13 +5,13 @@ import { useReducedMotion, useInView } from "framer-motion";
 
 /* ============================================================
    Transatlantic call network — a dotted world map (Atlantic
-   hemisphere) zoomed on the US ↔ Cairo corridor. Cairo is the
+   hemisphere) zoomed on the US ↔ Alexandria corridor. Alexandria is the
    calling center, with live call arcs to/from the U.S.; Fort
    Lauderdale is marked as the U.S. home office. Dots are
    generated procedurally from real lon/lat geography.
    ============================================================ */
 
-// view crop (lon/lat) — tightly zoomed on North America + the Atlantic + Cairo
+// view crop (lon/lat) — tightly zoomed on North America + the Atlantic + Alexandria
 const LON0 = -130, LON1 = 54;
 const LAT0 = -6, LAT1 = 58;
 const W = 560, H = 195;
@@ -35,14 +35,14 @@ const LAND: [number, number, number, number][] = [
   [10, 52, 14, 8],
   // Africa
   [18, 8, 16, 24], //    main body
-  [14, 29, 18, 7], //    N. Africa / Sahara (Cairo on its NE edge)
+  [14, 29, 18, 7], //    N. Africa / Sahara (Alexandria on its NE edge)
   // W. Asia / Middle East
   [44, 30, 14, 11],
 ];
 const isLand = (lon: number, lat: number) =>
   LAND.some(([cx, cy, rx, ry]) => ((lon - cx) / rx) ** 2 + ((lat - cy) / ry) ** 2 <= 1);
 
-const CAIRO = { lon: 31, lat: 30 };
+const ALEX = { lon: 29.9, lat: 31.2 }; // Alexandria, Egypt
 const HQ = { lon: -80.1, lat: 26.1 }; // Fort Lauderdale
 const US_CITIES = [
   { lon: -122, lat: 47 }, // Seattle
@@ -77,7 +77,7 @@ export function CallNetwork() {
     return out;
   }, []);
 
-  const cairo = { x: px(CAIRO.lon), y: py(CAIRO.lat) };
+  const alex = { x: px(ALEX.lon), y: py(ALEX.lat) };
   const hq = { x: px(HQ.lon), y: py(HQ.lat) };
   const targets = [...US_CITIES.map((c) => ({ x: px(c.lon), y: py(c.lat) })), hq];
 
@@ -103,9 +103,9 @@ export function CallNetwork() {
           ))}
         </g>
 
-        {/* arcs from Cairo -> US (calls out & back) */}
+        {/* arcs from Alexandria -> US (calls out & back) */}
         {targets.map((t, i) => {
-          const p = arc(cairo, t);
+          const p = arc(alex, t);
           return (
             <g key={i}>
               <path d={p} fill="none" stroke="url(#cn-out)" strokeWidth="1.8" opacity="0.6" />
@@ -135,18 +135,18 @@ export function CallNetwork() {
         <text x={hq.x} y={hq.y + 25} textAnchor="middle" className="font-display" fontSize="16" fontWeight="700" fill="#fff">West Palm Beach</text>
         <text x={hq.x} y={hq.y + 37} textAnchor="middle" fontSize="10" letterSpacing="1.6" fill="rgba(220,246,255,0.85)">U.S. HOME OFFICE</text>
 
-        {/* Cairo — the calling center */}
-        <circle cx={cairo.x} cy={cairo.y} r="9.5" fill="url(#cn-hub)" />
-        <circle cx={cairo.x} cy={cairo.y} r="9.5" fill="none" stroke="var(--cyan)">
+        {/* Alexandria — the calling center */}
+        <circle cx={alex.x} cy={alex.y} r="9.5" fill="url(#cn-hub)" />
+        <circle cx={alex.x} cy={alex.y} r="9.5" fill="none" stroke="var(--cyan)">
           {!reduce && <animate attributeName="r" from="9.5" to="31" dur="2.2s" repeatCount="indefinite" />}
           {!reduce && <animate attributeName="opacity" from="0.8" to="0" dur="2.2s" repeatCount="indefinite" />}
         </circle>
-        <text x={cairo.x} y={cairo.y + 25} textAnchor="middle" className="font-display" fontSize="20" fontWeight="700" fill="#fff">Cairo</text>
-        <text x={cairo.x} y={cairo.y + 38} textAnchor="middle" fontSize="10.5" letterSpacing="1.6" fill="rgba(47,211,158,0.95)">CALLING CENTER</text>
+        <text x={alex.x} y={alex.y + 25} textAnchor="middle" className="font-display" fontSize="20" fontWeight="700" fill="#fff">Alexandria</text>
+        <text x={alex.x} y={alex.y + 38} textAnchor="middle" fontSize="10.5" letterSpacing="1.6" fill="rgba(47,211,158,0.95)">CALLING CENTER</text>
       </svg>
 
       <p className="-mt-1 text-center text-sm text-white/65">
-        Calls flow from our Cairo center to every corner of the U.S. — run from our West Palm Beach office.
+        Calls flow from our Alexandria center to every corner of the U.S. — run from our West Palm Beach office.
       </p>
     </div>
   );

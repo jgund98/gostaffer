@@ -114,7 +114,7 @@ export function Hero() {
           >
             {showRep ? (
               <>
-                <span className="font-semibold text-white/80">Worried about accents?</span> A real rep in Cairo is
+                <span className="font-semibold text-white/80">Worried about accents?</span> A real rep in Alexandria is
                 on the floor right now — get on the phone and hear them for yourself.
               </>
             ) : (

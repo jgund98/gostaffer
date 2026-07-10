@@ -18,7 +18,7 @@ export function Footer() {
             <Logo className="h-8 self-start" />
             <p className="max-w-sm text-sm leading-relaxed text-slate">
               An American company with a world-class bilingual calling team in
-              Cairo. We kick off in 24 hours and put trained sales and support
+              Alexandria. We kick off in 24 hours and put trained sales and support
               agents on your phones in days — billed by the minute, zero setup fees.
             </p>
             <div className="flex flex-col gap-1.5 text-sm">

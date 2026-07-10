@@ -7,7 +7,7 @@ import { Phone, X, Play, ShieldCheck, Headphones, Star, ArrowRight } from "lucid
 /* ============================================================
    LiveRep — "Hear a real rep, live" experience.
 
-   Lets a visitor connect to an actual rep on the Cairo floor and
+   Lets a visitor connect to an actual rep on the Alexandria floor and
    hear the fluency/enthusiasm for themselves — the strongest answer
    to the #1 objection (accents). Two entry points (hero invite +
    persistent desktop launcher) share one panel. Business-hours
@@ -128,7 +128,7 @@ export function LiveRepInvite({ className = "" }: { className?: string }) {
           Hear a real rep — live
           <ArrowRight className="h-3.5 w-3.5 -translate-x-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
         </span>
-        <span className="text-xs text-white/55">Talk to our Cairo floor right now</span>
+        <span className="text-xs text-white/55">Talk to our Alexandria floor right now</span>
       </span>
     </button>
   );
@@ -217,7 +217,7 @@ export function LiveRep() {
                   </span>
                   <div>
                     <div className="font-display text-xl font-bold">{rep.name}</div>
-                    <div className="text-sm text-white/65">{rep.role} · Cairo, Egypt 🇪🇬</div>
+                    <div className="text-sm text-white/65">{rep.role} · Alexandria, Egypt 🇪🇬</div>
                     <div className="mt-1.5 flex flex-wrap gap-1.5">
                       <Badge icon={<Headphones className="h-3 w-3" />}>Bilingual EN / AR</Badge>
                       <Badge icon={<Star className="h-3 w-3" />}>4.9 rated</Badge>

@@ -152,7 +152,7 @@ function SidebarInner({ onNavigate }: { onNavigate?: () => void }) {
     mode === "client"
       ? { name: "David Reyes", sub: "Acme Corp · Client", initials: "DR", grad: "from-[#1f9e68] to-[#2fd39e]" }
       : mode === "agent"
-      ? { name: "Mariam H.", sub: "Senior Agent · Cairo", initials: "MH", grad: "from-[#1f9e68] to-[#2fd39e]" }
+      ? { name: "Mariam H.", sub: "Senior Agent · Alexandria", initials: "MH", grad: "from-[#1f9e68] to-[#2fd39e]" }
       : { name: "Jordan G.", sub: "Admin · GoStaffer", initials: "JG", grad: "from-[#0ea5a5] to-[#1f9e68]" };
 
   return (

@@ -20,7 +20,7 @@ export function Egypt() {
             <SectionHeading
               eyebrow="An American company"
               title={<>A U.S. company. A <span className="serif-i font-normal text-gradient">world-class team.</span></>}
-              lead="GoStaffer is headquartered in West Palm Beach, Florida — so you're working with an American company you can hold accountable. Our calling team is based in Cairo, where we hire the top bilingual talent, putting world-class staff on your phones for a fraction of what it costs to hire at home."
+              lead="GoStaffer is headquartered in West Palm Beach, Florida — so you're working with an American company you can hold accountable. Our calling team is based in Alexandria, where we hire the top bilingual talent, putting world-class staff on your phones for a fraction of what it costs to hire at home."
             />
           </Reveal>
 

@@ -10,9 +10,9 @@ import { CallNetwork } from "@/components/call-network";
 import { STATS } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About GoStaffer — American Company, Cairo Team",
+  title: "About GoStaffer — American Company, Alexandria Team",
   description:
-    "GoStaffer is an American company headquartered in West Palm Beach with an elite bilingual calling team in Cairo — offshore value, U.S. accountability, humans amplified by AI.",
+    "GoStaffer is an American company headquartered in West Palm Beach with an elite bilingual calling team in Alexandria — offshore value, U.S. accountability, humans amplified by AI.",
   alternates: { canonical: "/about" },
 };
 
@@ -29,7 +29,7 @@ export default function About() {
       <PageHero
         eyebrow="About GoStaffer"
         title={<>An American company with a <span className="serif-i font-normal text-gradient">world-class team</span></>}
-        lead="GoStaffer is headquartered in West Palm Beach, Florida, with our calling team based in Cairo. A decade in, we pair top bilingual talent with smart technology to give you results domestic teams can't match on price — and faceless call centers can't match on quality."
+        lead="GoStaffer is headquartered in West Palm Beach, Florida, with our calling team based in Alexandria. A decade in, we pair top bilingual talent with smart technology to give you results domestic teams can't match on price — and faceless call centers can't match on quality."
       />
 
       <Section tone="bone">
@@ -38,7 +38,7 @@ export default function About() {
             <SectionHeading
               eyebrow="Where our team comes from"
               title="The talent pool nobody's pricing in"
-              lead="Cairo turns out more than 50,000 college-educated, bilingual professionals every year. We hire the top tier and back every one of them with smart technology — all managed by our U.S. team in West Palm Beach."
+              lead="Alexandria turns out more than 50,000 college-educated, bilingual professionals every year. We hire the top tier and back every one of them with smart technology — all managed by our U.S. team in West Palm Beach."
             />
             <p className="mt-5 text-sm leading-relaxed text-slate">
               The result is clear, neutral-accent English, coverage that spans your customers' hours,

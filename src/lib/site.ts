@@ -11,8 +11,8 @@ export const PORTAL_URL = "https://portal.gostaffer.com";
 export const CONTACT_EMAIL = "hello@gostaffer.com"; // TODO(owner): confirm
 
 export const HQ_CITY = "West Palm Beach, FL";
-export const HQ_LINE = "Headquartered in West Palm Beach, FL · Calling team in Cairo, Egypt";
-export const OPS_CITY = "Cairo, Egypt";
+export const HQ_LINE = "Headquartered in West Palm Beach, FL · Calling team in Alexandria, Egypt";
+export const OPS_CITY = "Alexandria, Egypt";
 
 export type NavItem = {
   label: string;
@@ -197,4 +197,4 @@ export const TESTIMONIAL = {
 };
 
 export const TForDESC =
-  "Domestic hiring is slow and expensive. Faceless call centers don't care about your brand. GoStaffer is the middle path — dedicated bilingual staffers in Cairo, trained on your business and backed by AI, managed from West Palm Beach, billed by the minute.";
+  "Domestic hiring is slow and expensive. Faceless call centers don't care about your brand. GoStaffer is the middle path — dedicated bilingual staffers in Alexandria, trained on your business and backed by AI, managed from West Palm Beach, billed by the minute.";

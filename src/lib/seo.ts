@@ -14,7 +14,7 @@ export const SITE_URL =
 export const SITE_NAME = "GoStaffer";
 
 export const SITE_DESC =
-  "American company with an elite bilingual team in Cairo. Outbound sales, appointment setting, lead generation, inbound answering & customer support — on your phones in days, billed by the minute.";
+  "American company with an elite bilingual team in Alexandria. Outbound sales, appointment setting, lead generation, inbound answering & customer support — on your phones in days, billed by the minute.";
 
 const ORG_ID = `${SITE_URL}/#organization`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
